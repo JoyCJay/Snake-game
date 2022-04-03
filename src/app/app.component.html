@@ -1,0 +1,40 @@
+<div class="game-container">
+	<header>
+		<div class="game-info-pannel">
+			<div>
+				Game On Going: {{ongoing}}
+				<span *ngIf="ongoing; then onGoingMsg; else pausingMsg"></span>
+				<ng-template #pausingMsg>
+					<span>Press Enter to Continue</span>
+				</ng-template>
+
+				<ng-template #onGoingMsg>
+					<span>Press Enter to pause</span>
+				</ng-template>
+			</div>
+			<div>
+				Alive time: {{timeCount}}
+			</div>
+			<div>
+				Current Direction: {{snake.direction}}
+			</div>
+			<div>
+				Eat Apples (current / target): {{eatenApples.length}} / {{targetAppleCount}}
+				<span *ngIf="eatenApples.length >= targetAppleCount">
+					Congratulations, you can continue to challenge yourself
+				</span>
+			</div>
+		</div>
+		<!-- <div class="game-config-pannel">
+			<app-configer></app-configer>
+		</div> -->
+	</header>
+
+	<div class="game-board">
+		<canvas #canvas id="game-canvas"
+			width={{canvasConfig.width}}
+			height={{canvasConfig.height}}
+		>
+		</canvas>
+	</div>
+</div>

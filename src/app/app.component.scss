@@ -1,0 +1,44 @@
+div.game-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,144,237,0.4);
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+
+    header {
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+
+        div.game-info-pannel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        div.game-config-pannel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            width: 200px;
+        }
+    }
+
+    div.game-board {
+        background-color: antiquewhite;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        canvas {
+            border:1px solid #000000;
+        }
+    }
+}
